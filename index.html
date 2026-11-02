@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lia Salamanca · Creadora de contenido UGC</title>
+<meta name="description" content="Portafolio de Lia Salamanca: creadora de contenido UGC, social media manager y community manager.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/lia.webp" type="image/webp">
+<style>
+:root{--bg:#fbf8f1;--ink:#000;--pink:#f2b6c9;--cream:#ece2ce;--night:#000;--line:rgba(0,0,0,.16);--soft:rgba(0,0,0,.62);
+--wave-ink:rgba(0,0,0,.13);--wave-pink:rgba(226,140,170,.6);--wave-cream:rgba(236,226,206,.17);
+padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000;--ink:#fbf8f1;--line:rgba(251,248,241,.2);--soft:rgba(251,248,241,.66);--wave-ink:rgba(251,248,241,.14)}}
+:root[data-theme="dark"]{--bg:#000;--ink:#fbf8f1;--line:rgba(251,248,241,.2);--soft:rgba(251,248,241,.66);--wave-ink:rgba(251,248,241,.14)}
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 "DM Sans",system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:Italiana,"Didot",Georgia,serif;font-weight:400;margin:0;line-height:1}
+a{color:inherit}
+img{max-width:100%}
+:focus-visible{outline:2px solid var(--pink);outline-offset:3px}
+section{padding:clamp(4rem,10vw,8rem) clamp(1.2rem,5vw,4rem);position:relative}
+section+section{border-top:1px solid var(--line)}
+h2{font-size:clamp(2.6rem,7.5vw,6rem);margin-bottom:1.6rem}
+.hint{color:var(--soft);margin:0 0 1rem}
+
+/* ---------- HERO ---------- */
+.hero{--mx:0;--my:0;position:relative;height:100svh;min-height:600px;background:var(--night);color:var(--cream);overflow:hidden}
+#w{position:absolute;inset:0;width:100%;height:100%;z-index:0;display:block}
+.top{position:absolute;top:0;left:0;right:0;z-index:6;display:flex;justify-content:space-between;align-items:center;padding:1.1rem clamp(1.2rem,5vw,4rem);font-size:.95rem}
+.top{padding-right:calc(clamp(1.2rem,5vw,4rem) + 6.6rem)}
+.top b{font:400 1.6rem/1.1 Italiana,serif;letter-spacing:.05em;white-space:nowrap}
+.top nav{display:flex;gap:clamp(.9rem,2.5vw,1.8rem)}
+.top a{text-decoration:none}.top a:hover{text-decoration:underline}
+.big{position:absolute;left:0;right:0;top:32%;z-index:1;margin:0;text-align:center;white-space:nowrap;font:400 23.5vw/.86 Italiana,"Didot",Georgia,serif;letter-spacing:-.01em;color:var(--cream);display:flex;flex-direction:column;align-items:center;transform:translate3d(calc(var(--mx)*14px),0,0);pointer-events:none}
+.big span{display:block;animation:rise 1.2s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i)*140ms)}
+.ghost{z-index:3;color:transparent;-webkit-text-stroke:1.4px rgba(236,226,206,.72)}
+@keyframes rise{from{opacity:0;transform:translateY(40%)}}
+.portrait{position:absolute;bottom:3.4rem;left:50%;transform:translateX(-50%);height:min(66%,calc(104vw*1292/1150));margin:0;z-index:2;animation:fade 1.4s .25s ease both}
+.portrait img{height:100%;width:auto;max-width:none;display:block;transform:translate3d(calc(var(--mx)*-9px),calc(var(--my)*-5px),0)}
+@keyframes fade{from{opacity:0}}
+.lia{position:absolute;z-index:4;left:0;right:0;top:13%;text-align:center;font:400 35vw/.8 Italiana,"Didot",Georgia,serif;letter-spacing:.12em;padding-left:.12em;color:var(--cream);animation:rise 1.2s cubic-bezier(.2,.8,.2,1) both}
+.roles{position:absolute;z-index:5;left:1rem;right:1rem;bottom:1rem;margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:.1rem 1.1rem;font-size:.78rem;line-height:1.5;text-align:center}
+.where{display:none}
+@media(max-width:899px){
+ .top{flex-wrap:wrap;row-gap:.5rem;padding-top:1rem;padding-right:clamp(1.2rem,5vw,4rem)}
+ .top nav{width:100%;justify-content:space-between;font-size:.9rem}
+ .lia{top:13.5%}
+}
+@media(min-width:900px){
+ .big{top:37%;flex-direction:row;justify-content:center;font-size:14.8vw;letter-spacing:.01em}
+ .portrait{bottom:0;height:min(74%,calc(60vw*1292/1150))}
+ .lia{top:8%;font-size:min(21vw,30svh);letter-spacing:.2em;padding-left:.2em}
+ .roles{left:clamp(1.2rem,5vw,4rem);right:auto;bottom:1.6rem;display:block;font-size:.95rem;text-align:left}
+ .where{display:block;position:absolute;z-index:5;right:clamp(1.2rem,5vw,4rem);bottom:1.6rem;margin:0;font-size:.95rem}
+}
+
+/* ---------- CINTA ---------- */
+.mq{display:flex;overflow:hidden;background:var(--pink);color:#000;padding:1rem 0}
+.tr{flex:0 0 auto;min-width:100%;display:flex;justify-content:space-around;align-items:center;gap:2rem;animation:mq 70s linear infinite;font:400 1.7rem/1.2 Italiana,serif}
+.tr span::after{content:"";display:inline-block;width:.4rem;height:.4rem;background:#000;transform:rotate(45deg);margin-left:2rem;vertical-align:middle}
+@keyframes mq{to{transform:translateX(-100%)}}
+
+/* ---------- QUIÉN SOY ---------- */
+.who{display:grid;gap:2.5rem;align-items:start}
+.who figure{margin:0;border-radius:999px 999px 6px 6px;overflow:hidden;max-width:340px;aspect-ratio:3/4}
+.who figure img{display:block;width:100%;height:100%;object-fit:cover}
+/* foto recortada que se monta sobre el arco */
+.who .wcut{position:relative;z-index:1;border-radius:0;overflow:visible;aspect-ratio:auto;max-width:480px;margin-top:0}
+.who .wcut img{height:auto;-webkit-mask-image:linear-gradient(#000 82%,transparent),linear-gradient(to right,transparent,#000 10%);-webkit-mask-composite:source-in;mask-image:linear-gradient(#000 82%,transparent),linear-gradient(to right,transparent,#000 10%);mask-composite:intersect}
+.who p{max-width:40rem;font-size:1.15rem;margin:0 0 1.2rem}
+.who .q{font:400 clamp(1.8rem,4vw,3rem)/1.1 Italiana,serif;margin-bottom:1.6rem}
+/* dos filas en zigzag: foto + texto, luego texto + foto */
+.who{display:block}
+.wrow{display:grid;gap:2rem;align-items:center}
+.wrow+.wrow{margin-top:clamp(3rem,7vw,5.5rem)}
+.who .warch{justify-self:center;width:100%;max-width:360px}
+.who .warch img{object-position:50% 20%}
+.who .wcut{justify-self:center}
+@media(min-width:860px){
+ .wrow{grid-template-columns:5fr 7fr;gap:5rem}
+ .wrow.rev{grid-template-columns:7fr 5fr}
+}
+
+/* ---------- VIDEOS ---------- */
+.rail{display:flex;gap:1.4rem;overflow-x:auto;padding:1rem clamp(1.2rem,5vw,4rem) 3rem;margin:0 calc(-1*clamp(1.2rem,5vw,4rem));scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:var(--pink) transparent}
+.card{flex:0 0 min(60vw,225px);text-decoration:none;scroll-snap-align:center}
+.card:nth-child(even){margin-top:2.5rem}
+.ph{position:relative;aspect-ratio:9/14;overflow:hidden;border-radius:6px;background:var(--pink)}
+.card:nth-child(odd) .ph{border-radius:999px 999px 6px 6px}
+.ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.card:hover .ph img{transform:scale(1.06)}
+.ph i{position:absolute;right:.8rem;bottom:.8rem;width:46px;height:46px;border-radius:50%;background:#000;display:grid;place-items:center}
+.ph i::after{content:"";border-left:12px solid #fbf8f1;border-block:8px solid transparent;margin-left:3px}
+.card em{display:inline-block;font-style:normal;font-size:.8rem;font-weight:500;border:1px solid var(--ink);border-radius:99px;padding:.1rem .7rem;margin:1rem 0 .5rem}
+.card h3{font-size:1.55rem;line-height:1.1}
+
+/* ---------- FOTOS Y MODELAJE ---------- */
+.gal{columns:3 200px;column-gap:1rem;margin-top:1.5rem;max-width:980px}
+.gal figure{margin:0 0 1rem;break-inside:avoid;overflow:hidden;border-radius:6px}
+.gal .arch{border-radius:999px 999px 6px 6px}
+.gal img{width:100%;height:auto;display:block;transition:filter .5s,transform .6s}
+@media (hover:hover){.gal img{filter:saturate(.82) contrast(1.03)}.gal figure:hover img{filter:none;transform:scale(1.04)}}
+.sub{font:400 1.7rem Italiana,serif;margin:2.4rem 0 1rem}
+.book,.more{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(.5rem,1.5vw,1rem)}
+.book figure,.more figure{margin:0;overflow:hidden;aspect-ratio:4/5}
+.more figure{aspect-ratio:2/3}
+.book img,.more img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;display:block;transition:transform .6s}
+.book figure:hover img,.more figure:hover img{transform:scale(1.03)}
+.more figure:first-child{border-radius:999px 999px 6px 6px}
+
+/* ---------- SERVICIOS: CARPETAS ---------- */
+.folders{display:flex;height:clamp(420px,60vh,540px);max-width:1200px;margin-top:2rem;background:transparent}
+.fold{--w:clamp(78px,8.4vw,96px);flex:0 0 var(--w);display:flex;min-width:0;position:relative;background:var(--c);border-radius:30px 0 0 0;box-shadow:-8px 0 16px -10px rgba(0,0,0,.4);transition:flex .75s cubic-bezier(.2,.8,.2,1);overflow:hidden}
+.fold:first-child{box-shadow:none}
+.fold.on{flex:1 0 var(--w)}
+.tab{all:unset;box-sizing:border-box;flex:none;width:64px;position:relative;cursor:pointer;background:var(--c);z-index:2;box-shadow:6px 0 14px -8px rgba(0,0,0,.4)}
+.tab:focus-visible{outline:2px solid #000;outline-offset:-4px}
+.sticker{position:absolute;left:50%;top:var(--top);transform:translateX(-50%);writing-mode:vertical-rl;rotate:180deg;background:#fff;color:#000;font:500 .82rem/1.2 "DM Sans",sans-serif;padding:.9rem .4rem;border-radius:3px;white-space:nowrap;transition:transform .3s}
+.tab:hover .sticker{transform:translateX(-50%) translateY(-4px)}
+.pic{position:relative;flex:1;min-width:0;overflow:hidden;background:#000}
+.pic img{position:absolute;inset:0 auto 0 0;height:100%;width:clamp(340px,46vw,560px);min-width:100%;max-width:none;object-fit:cover;filter:saturate(.85)}
+.fold.on .pic img{filter:none}
+.txt{position:absolute;left:0;bottom:0;width:100%;padding:5rem 1.6rem 1.8rem;background:linear-gradient(transparent,rgba(0,0,0,.72));color:#fff;opacity:0;transition:opacity .4s}
+.fold.on .txt{opacity:1;transition-delay:.45s}
+.txt h3{font-size:clamp(1.9rem,4vw,3rem);margin-bottom:.4rem}
+.txt p{margin:0;max-width:26rem;font-size:1rem}
+@media(max-width:759px){
+ .folders{flex-direction:column;height:auto}
+ .fold,.fold.on{--w:60px;flex:none}
+ .fold{flex-direction:column;border-radius:22px 22px 0 0;margin-top:-10px;box-shadow:0 -8px 14px -10px rgba(0,0,0,.4)}
+ .fold:first-child{margin-top:0}
+ .tab{width:100%;height:60px;box-shadow:none}
+ .sticker{writing-mode:horizontal-tb;rotate:none;top:50%;left:1.4rem;transform:translateY(-50%);padding:.35rem .8rem}
+ .tab:hover .sticker{transform:translateY(-50%)}
+ .pic{flex:none;height:0;transition:height .6s cubic-bezier(.2,.8,.2,1)}
+ .fold.on .pic{height:min(118vw,480px)}
+ .pic img{width:100%}
+ .txt{width:100%}
+}
+
+/* ---------- CARPETAS REALISTAS ---------- */
+/* textura de papel (ruido muy suave) + pestaña que sobresale + etiqueta pegada + foto impresa adentro */
+.folders{--paper:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .09 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");padding-top:28px;height:clamp(520px,calc(72vh + 28px),680px);max-width:1400px}
+.fold{overflow:visible;border-radius:0 8px 8px 8px;background-color:var(--c);background-image:var(--paper),linear-gradient(90deg,rgba(255,255,255,.22),rgba(255,255,255,0) 30%,rgba(0,0,0,.07));box-shadow:-10px 2px 18px -10px rgba(0,0,0,.5),inset 0 0 0 1px rgba(0,0,0,.07)}
+.fold:first-child{box-shadow:inset 0 0 0 1px rgba(0,0,0,.07)}
+.fold::before{content:"";position:absolute;left:0;bottom:100%;width:min(calc(var(--w) - 6px),132px);height:24px;background:inherit;border-radius:9px 9px 0 0;clip-path:polygon(0 100%,7px 0,calc(100% - 7px) 0,100% 100%);box-shadow:none}
+.fold::after{content:"";position:absolute;left:0;right:0;top:12px;height:1px;background:rgba(0,0,0,.13);box-shadow:0 1px 0 rgba(255,255,255,.4);pointer-events:none;z-index:3}
+.tab{background:inherit;border-radius:0 0 0 8px}
+.sticker{background:#fffdf6;border:1px solid rgba(0,0,0,.08);box-shadow:0 1px 3px rgba(0,0,0,.22);rotate:178.5deg;border-radius:2px}
+.pic{background-color:var(--c);background-image:linear-gradient(rgba(0,0,0,.14),rgba(0,0,0,.06));border-radius:0 8px 8px 0}
+.pic::before{content:"";position:absolute;inset:30px 10px 12px 26px;background:#fffdf6;rotate:2.4deg;box-shadow:0 3px 10px rgba(0,0,0,.18)}
+.pic img{inset:20px auto 20px 14px;height:calc(100% - 40px);width:clamp(340px,46vw,620px);min-width:calc(100% - 30px);box-sizing:border-box;border:7px solid #fffdf6;box-shadow:0 8px 18px rgba(0,0,0,.32);rotate:-1deg}
+.txt{left:14px;bottom:20px;width:calc(100% - 30px);padding:4rem 1.4rem 1.4rem;rotate:-1deg}
+.fold:nth-child(2){--tx:16%}.fold:nth-child(3){--tx:34%}.fold:nth-child(4){--tx:52%}.fold:nth-child(5){--tx:8%}.fold:nth-child(6){--tx:26%}.fold:nth-child(7){--tx:44%}
+@media(max-width:759px){
+ .folders{padding-top:22px;height:auto}
+ .fold,.fold:first-child{border-radius:0 10px 0 0;margin-top:-4px;box-shadow:0 -6px 14px -10px rgba(0,0,0,.45),inset 0 0 0 1px rgba(0,0,0,.07)}
+ .fold:first-child{margin-top:0}
+ .fold::before{left:var(--tx,0%);width:44%;height:20px}
+ .fold::after{top:10px}
+ .tab{border-radius:0}
+ .sticker{rotate:-1deg}
+ .pic{border-radius:0}
+ .pic img{width:calc(100% - 30px);min-width:0}
+}
+
+/* ---------- EQUIPO, PROCESO, CONTACTO ---------- */
+.set{display:flex;flex-wrap:wrap;gap:.8rem}
+.set>span{border:1px solid var(--ink);border-radius:99px;padding:.5rem 1.2rem}
+/* ¿Cómo trabajo?: pasos que se abren al tocarlos, con una línea que se llena al bajar */
+.steps{--p:0;list-style:none;padding:0 0 0 0;margin:0;display:grid;gap:.6rem;max-width:56rem;position:relative}
+.steps::before,.steps::after{content:"";position:absolute;left:calc(1.6rem - 1px);top:1.6rem;bottom:1.6rem;width:2px;background:var(--line);border-radius:2px}
+.steps::after{background:var(--pink);bottom:auto;height:calc((100% - 3.2rem)*var(--p))}
+.steps li{position:relative;z-index:1}
+.step{all:unset;box-sizing:border-box;display:grid;grid-template-columns:3.2rem 1fr 1.6rem;align-items:center;gap:1rem;width:100%;padding:.8rem 1rem .8rem 0;border-radius:14px;cursor:pointer;position:relative;overflow:hidden;font-size:1.1rem;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.step::before{content:"";position:absolute;inset:0;background:var(--pink);opacity:.35;transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.2,.8,.2,1);z-index:-1}
+.step:hover::before,.steps li.on .step::before{transform:scaleX(1)}
+.step:hover{transform:translateX(6px)}
+.step:focus-visible{outline:2px solid var(--pink);outline-offset:2px}
+.sn{width:3.2rem;height:3.2rem;border-radius:50%;display:grid;place-items:center;background:var(--bg);border:1px solid var(--ink);font:400 1.9rem/1 Italiana,serif;transition:background .3s,color .3s,transform .4s cubic-bezier(.2,.8,.2,1)}
+.steps li.on .sn,.step:hover .sn{background:var(--ink);color:var(--bg);transform:rotate(-8deg) scale(1.06)}
+.si{position:relative;width:1.2rem;height:1.2rem}
+.si::before,.si::after{content:"";position:absolute;left:0;right:0;top:50%;height:1.5px;background:currentColor;transition:transform .35s}
+.si::after{transform:rotate(90deg)}
+.steps li.on .si::after{transform:rotate(0)}
+.sd{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1)}
+.sd>div{overflow:hidden;padding-left:4.2rem;color:var(--soft)}
+.sd p{margin:.2rem 0 .9rem;max-width:40rem}
+.steps li.on .sd{grid-template-rows:1fr}
+.contact{text-align:center;overflow:hidden}
+.contact .ctext>p{font:400 clamp(1.9rem,5vw,3.4rem)/1.1 Italiana,"Didot",Georgia,serif;margin:0}
+.contact h2{font-size:clamp(3.2rem,14vw,11rem);color:transparent;-webkit-text-stroke:1px var(--ink)}
+.links{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-top:1.4rem}
+.btn{display:inline-block;padding:.9rem 2rem;border-radius:99px;border:1px solid var(--ink);text-decoration:none;font-weight:500;transition:background .2s,color .2s,transform .2s}
+.btn:hover{background:var(--pink);color:#000;transform:translateY(-3px)}
+.btn.main{background:var(--ink);color:var(--bg)}
+.btn.main:hover{background:var(--pink);color:#000}
+footer{text-align:center;color:var(--soft);font-size:.9rem;padding:2rem 1rem 3rem}
+
+/* ---------- ONDAS EN SECCIONES Y FOTOS RECORTADAS ---------- */
+.wv{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;display:block}
+#fotos>*:not(.wv),.contact>*:not(.wv),.stage>*:not(.wv){position:relative;z-index:1}
+#fotos .wv{color:var(--wave-pink)}
+.contact .wv{color:var(--wave-ink)}
+.stage .wv{color:var(--wave-cream)}
+.cut{margin:0;justify-self:center}
+.cut img{height:100%;width:auto;max-width:none;display:block;-webkit-mask-image:linear-gradient(#000 86%,transparent);mask-image:linear-gradient(#000 86%,transparent)}
+
+/* Modelaje: escenario negro como el hero */
+#modelaje{background:var(--night);color:var(--cream)}
+.stage{position:relative;display:grid;gap:1.5rem;border-bottom:1px solid rgba(236,226,206,.22)}
+.stage .cut{height:min(110vw,440px)}
+/* foto de estudio: ya viene sin fondo, se muestra tal cual */
+.glow img{-webkit-mask-image:none;mask-image:none}
+/* Mi equipo: foto recortada con ondas detrás */
+#set{padding-bottom:0}
+#set>*:not(.wv){position:relative;z-index:1}
+#set .wv{color:var(--wave-ink)}
+.sgrid{display:grid;gap:2rem;align-items:end}
+.sgrid>.stxt{padding-bottom:clamp(2rem,6vw,6rem);min-width:0}
+.sgrid .cut{height:min(105vw,420px)}
+@media(max-width:899px){#set .wv{top:auto;height:540px}}
+@media(min-width:900px){.sgrid{grid-template-columns:1.5fr 1fr}.sgrid .cut{height:min(42vw,540px)}}
+/* la foto original viene cortada a la derecha: ese borde se desvanece */
+.fade-r img{-webkit-mask-image:linear-gradient(#000 86%,transparent),linear-gradient(to left,transparent,#000 9%);-webkit-mask-composite:source-in;mask-image:linear-gradient(#000 86%,transparent),linear-gradient(to left,transparent,#000 9%);mask-composite:intersect}
+.book,.more{grid-template-columns:repeat(2,minmax(0,1fr))}
+.book{max-width:460px}
+.more{max-width:980px}
+/* Más fotos: verticales y horizontales sin recortarlas mal */
+.more .land{grid-column:span 2;aspect-ratio:3/2}
+.more .land img{object-position:50% 50%}
+.more .m-wide{grid-column:span 2;aspect-ratio:4/5}
+@media(min-width:860px){
+ .stage{grid-template-columns:1fr 1fr}
+ .stage .stxt{align-self:center}
+ .stage .cut{height:min(46vw,560px)}
+ .more{grid-template-columns:repeat(6,minmax(0,1fr))}
+ .more figure,.more .m-wide{grid-column:span 2;aspect-ratio:2/3}
+ .more .land{grid-column:span 3;aspect-ratio:3/2}
+}
+
+/* Contacto con foto integrada */
+.contact{padding-bottom:0}
+.cwrap{display:grid;gap:1rem;align-items:end}
+.ctext{padding-bottom:1rem}
+/* la palabra "Contacto" se funde con la foto, como el nombre en el hero:
+   rosada detrás de la foto + contorno encima */
+.contact{--ch:min(100vw,420px)}
+.contact .cut{height:var(--ch)}
+.ctext{padding-bottom:1.5rem}
+.contact .cword{position:absolute;left:0;right:0;bottom:calc(var(--ch)*.4);margin:0;z-index:1;text-align:center;white-space:nowrap;font:400 23.5vw/.8 Italiana,"Didot",Georgia,serif;color:var(--pink);-webkit-text-stroke:0;pointer-events:none}
+.contact .cword.ghost{z-index:3;color:transparent;-webkit-text-stroke:1.2px var(--ink)}
+@media(min-width:900px){
+ .contact{--ch:min(42vw,520px)}
+ .contact .cword{font-size:min(17vw,17rem)}
+}
+
+/* ---------- IDIOMA ES / EN ---------- */
+html:not([lang="en"]) body [lang="en"],html[lang="en"] body [lang="es"]{display:none!important}
+.lang{all:unset;box-sizing:border-box;position:fixed;z-index:40;top:1rem;right:clamp(1.2rem,5vw,4rem);display:flex;gap:2px;padding:3px;border-radius:99px;background:rgba(0,0,0,.78);border:1px solid rgba(236,226,206,.4);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);cursor:pointer;font:500 .82rem/1 "DM Sans",sans-serif;letter-spacing:.06em}
+.lang span{padding:.45rem .7rem;border-radius:99px;color:#ece2ce;transition:background .25s,color .25s}
+html:not([lang="en"]) .lang [data-v="es"],html[lang="en"] .lang [data-v="en"]{background:var(--pink);color:#000}
+.lang:focus-visible{outline:2px solid var(--pink);outline-offset:3px}
+.lead{max-width:44rem;font-size:1.15rem;margin:0 0 2.2rem}
+.agency{display:inline-block;margin:0 0 .4rem;padding:.45rem 1.1rem;border-radius:99px;background:var(--pink);color:#000;font-weight:500}
+
+/* ---------- CHISPAS DEL CURSOR ---------- */
+.sp{position:fixed;pointer-events:none;z-index:50;border-radius:50%;background:var(--sc,#f2b6c9);box-shadow:0 0 6px 1px var(--sc,#f2b6c9);opacity:.45;animation:sp .9s ease-out forwards}
+@keyframes sp{to{opacity:0;transform:translate(var(--dx),var(--dy)) scale(.3)}}
+
+@media (prefers-reduced-motion:reduce){
+ *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+ .mq{flex-wrap:wrap;justify-content:center;padding:1rem 1.2rem}.tr{min-width:0;flex-wrap:wrap;justify-content:center;gap:.4rem 1rem}#t2{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Botón de idioma: cambia toda la página entre español e inglés -->
+<button class="lang" id="lang" type="button" aria-label="Cambiar idioma / Change language"><span data-v="es">ES</span><span data-v="en">EN</span></button>
+
+<header class="hero" id="top">
+  <canvas id="w" aria-hidden="true"></canvas>
+  <div class="top"><b>Lia Salamanca</b><nav><a href="#videos">Videos</a><a href="#modelaje"><span lang="es">Modelaje</span><span lang="en">Modeling</span></a><a href="#hago"><span lang="es">Servicios</span><span lang="en">Services</span></a><a href="#contacto"><span lang="es">Contacto</span><span lang="en">Contact</span></a></nav></div>
+  <div class="lia" aria-hidden="true">LIA</div>
+  <h1 class="big" aria-label="Lia Salamanca"><span style="--i:0" aria-hidden="true">SALA</span><span style="--i:1" aria-hidden="true">MANCA</span></h1>
+  <figure class="portrait"><img src="img/lia.webp" width="1150" height="1292" alt="Lia con audífonos y lentes oscuros, retrato en blanco y negro" data-alt-en="Lia wearing headphones and dark sunglasses, black and white portrait" fetchpriority="high"></figure>
+  <div class="big ghost" aria-hidden="true"><span style="--i:0">SALA</span><span style="--i:1">MANCA</span></div>
+  <ul class="roles">
+    <li><span lang="es">Modelo</span><span lang="en">Model</span></li>
+    <li><span lang="es">Creadora de contenido UGC</span><span lang="en">UGC content creator</span></li>
+    <li>Social media manager</li>
+    <li>Community manager</li>
+  </ul>
+  <p class="where">Bucaramanga, Colombia · <span lang="es">Disponible para viajar</span><span lang="en">Available to travel</span></p>
+</header>
+
+<div class="mq"><div class="tr" id="t1"></div><div class="tr" id="t2" aria-hidden="true"></div></div>
+
+<section class="who" id="quien">
+  <h2><span lang="es">¿Quién soy?</span><span lang="en">About me</span></h2>
+  <!-- fila 1: foto del cóctel a la izquierda, saludo a la derecha -->
+  <div class="wrow">
+    <figure class="wcut"><img src="img/c-cocktail.webp" width="900" height="678" alt="Lia con blusa amarilla tomando un cóctel" data-alt-en="Lia in a yellow top sipping a cocktail" loading="lazy" decoding="async"></figure>
+    <div class="wtxt">
+    <p class="q" lang="es">¡Hola! Soy Lia, tengo 23 años y quiero que tu marca se sienta como el consejo de una amiga.</p>
+    <p class="q" lang="en">Hi! I’m Lia, I’m 23, and I want your brand to feel like advice from a friend.</p>
+
+    <p lang="es">Estudio Diseño de Moda en la UMB y grabo como si te estuviera hablando a ti: de moda, tecnología, deporte y comida, siempre con naturalidad y mucho cariño.</p>
+    <p lang="en">I study Fashion Design at UMB and I film like I’m talking straight to you: fashion, tech, sports and food, always natural and made with love.</p>
+    </div>
+  </div>
+  <!-- fila 2: texto a la izquierda, foto rosada a la derecha -->
+  <div class="wrow rev">
+    <div class="wtxt">
+    <p lang="es">Hablo español e inglés (C1), vivo en Bucaramanga y feliz viajo a donde me necesites. Tengo visa de turismo para Estados Unidos.</p>
+    <p lang="en">I speak Spanish and English (C1), I’m based in Bucaramanga and I’m happy to travel wherever you need me. I have a US tourist visa.</p>
+
+    <p lang="es">Soy modelo de RoarStudio, bailo, canto y no me quedo quieta: corro, nado, juego pádel y patino.</p>
+    <p lang="en">I’m a RoarStudio model, I dance, I sing and I can’t sit still: I run, swim, play padel and skate.</p>
+    </div>
+    <figure class="warch"><img src="img/f-pink.webp" width="1000" height="922" alt="Lia riendo con la mano en la mejilla sobre fondo fucsia" data-alt-en="Lia laughing with her hand on her cheek against a fuchsia background" loading="lazy" decoding="async"></figure>
+  </div>
+</section>
+
+<section id="videos">
+  <h2><span lang="es">Mis videos</span><span lang="en">My videos</span></h2>
+  <p class="hint"><span lang="es">Desliza y toca un video para verlo.</span><span lang="en">Swipe and tap a video to watch it.</span></p>
+  <div class="rail">
+    <a class="card" href="https://www.instagram.com/reel/DW47VlUkQ2I/" target="_blank" rel="noopener"><div class="ph"><img src="img/v-food.webp" width="417" height="650" alt="Miniatura: Reseña de Perriarte, comida rápida" data-alt-en="Thumbnail: Perriarte fast food review" loading="lazy" decoding="async"><i aria-hidden="true"></i></div><em><span lang="es">Reseña</span><span lang="en">Review</span></em><h3><span lang="es">Reseña de Perriarte, comida rápida</span><span lang="en">Perriarte fast food review</span></h3></a>
+    <a class="card" href="https://www.tiktok.com/@liavsalamanca/video/7462800719456832774" target="_blank" rel="noopener"><div class="ph"><img src="img/v-shirt.webp" width="560" height="1017" alt="Miniatura: Styling de una camisa de marca de hombre" data-alt-en="Thumbnail: Styling a men’s brand shirt" loading="lazy" decoding="async"><i aria-hidden="true"></i></div><em><span lang="es">Estilismo</span><span lang="en">Styling</span></em><h3><span lang="es">Styling de una camisa de marca de hombre</span><span lang="en">Styling a men’s brand shirt</span></h3></a>
+    <a class="card" href="https://www.instagram.com/p/DWp7hDxjQte/" target="_blank" rel="noopener"><div class="ph"><img src="img/v-plate.webp" width="640" height="960" alt="Miniatura: Preparando un plato" data-alt-en="Thumbnail: Making a dish" loading="lazy" decoding="async"><i aria-hidden="true"></i></div><em><span lang="es">Cocina</span><span lang="en">Cooking</span></em><h3><span lang="es">Preparando un plato</span><span lang="en">Making a dish</span></h3></a>
+    <a class="card" href="https://www.tiktok.com/@liavsalamanca/video/7515659004996095237" target="_blank" rel="noopener"><div class="ph"><img src="img/v-shoes.webp" width="560" height="1017" alt="Miniatura: Unboxing de compras en Valledupar" data-alt-en="Thumbnail: Unboxing my Valledupar shopping haul" loading="lazy" decoding="async"><i aria-hidden="true"></i></div><em>Haul</em><h3><span lang="es">Unboxing de compras en Valledupar</span><span lang="en">Unboxing my Valledupar shopping haul</span></h3></a>
+    <a class="card" href="https://www.tiktok.com/@liavsalamanca/video/7467278840121855237" target="_blank" rel="noopener"><div class="ph"><img src="img/v-group.webp" width="560" height="980" alt="Miniatura: Un día conmigo estudiando Diseño de Moda" data-alt-en="Thumbnail: A day with me studying Fashion Design" loading="lazy" decoding="async"><i aria-hidden="true"></i></div><em>Lifestyle</em><h3><span lang="es">Un día conmigo estudiando Diseño de Moda</span><span lang="en">A day with me studying Fashion Design</span></h3></a>
+    <a class="card" href="https://www.tiktok.com/@liavsalamanca/video/7535253345884278021" target="_blank" rel="noopener"><div class="ph"><img src="img/v-bunny.webp" width="560" height="1017" alt="Miniatura: Unboxing de Suspiro, el conejo de Mario Hernández" data-alt-en="Thumbnail: Unboxing Suspiro, the Mario Hernández bunny" loading="lazy" decoding="async"><i aria-hidden="true"></i></div><em>Unboxing</em><h3><span lang="es">Unboxing de Suspiro, el conejo de Mario Hernández</span><span lang="en">Unboxing Suspiro, the Mario Hernández bunny</span></h3></a>
+  </div>
+</section>
+
+<section id="fotos">
+  <canvas class="wv" data-wave="fotos" aria-hidden="true"></canvas>
+  <h2><span lang="es">Fotos</span><span lang="en">Photos</span></h2>
+  <div class="gal">
+    <figure class="arch"><img src="img/f-profile.webp" width="820" height="1022" alt="Lia de perfil con el cabello largo y los ojos cerrados" data-alt-en="Lia in profile with long hair and eyes closed" loading="lazy" decoding="async"></figure>
+    <figure><img src="img/f-frappe.webp" width="760" height="1140" alt="Lia con un frappé frente al río de Chicago" data-alt-en="Lia holding a frappé by the Chicago River" loading="lazy" decoding="async"></figure>
+    <figure class="arch"><img src="img/f-beso.webp" width="760" height="1140" alt="Lia lanzando un beso frente a los edificios de Chicago" data-alt-en="Lia blowing a kiss in front of Chicago buildings" loading="lazy" decoding="async"></figure>
+    <figure><img src="img/f-club.webp" width="760" height="1351" alt="Lia bajando unas escaleras con vestido de jean" data-alt-en="Lia walking down stairs in a denim dress" loading="lazy" decoding="async"></figure>
+    <figure class="arch"><img src="img/f-court.webp" width="900" height="1125" alt="Lia con una banda blanca en el cabello y top blanco, bajo el sol" data-alt-en="Lia with a white headband and white top in the sun" loading="lazy" decoding="async"></figure>
+    <figure><img src="img/f-terraza.webp" width="900" height="1200" alt="Lia con la mano en la mejilla en la terraza de un restaurante, con una bebida roja" data-alt-en="Lia with her hand on her cheek on a restaurant terrace, with a red drink" loading="lazy" decoding="async"></figure>
+    <figure class="arch"><img src="img/f-bebida.webp" width="900" height="1600" alt="Lia sonriendo con una bebida roja en la mano, rodeada de plantas" data-alt-en="Lia smiling with a red drink in hand, surrounded by plants" loading="lazy" decoding="async"></figure>
+  </div>
+</section>
+
+<section id="modelaje">
+  <div class="stage">
+    <canvas class="wv" data-wave="modelaje" aria-hidden="true"></canvas>
+    <div class="stxt">
+      <h2><span lang="es">Modelaje</span><span lang="en">Modeling</span></h2>
+      <p class="agency"><span lang="es">Hago parte de RoarStudio, agencia y academia de modelaje</span><span lang="en">I’m part of RoarStudio, a modeling agency and academy</span></p>
+    </div>
+    <figure class="cut glow"><img src="img/b-d.webp" width="800" height="1200" alt="Lia con la mano en el cabello, vestida de negro, foto de estudio" data-alt-en="Lia with her hand in her hair, dressed in black, studio photo" loading="lazy" decoding="async"></figure>
+  </div>
+  <p class="sub">Book</p>
+  <div class="book">
+    <figure class="bk"><img src="img/b-a.webp" width="542" height="592" alt="Lia, retrato de book" data-alt-en="Lia, portfolio portrait" loading="lazy" decoding="async"></figure>
+    <figure class="bk"><img src="img/b-b.webp" width="404" height="605" alt="Lia de perfil, foto de book" data-alt-en="Lia in profile, portfolio photo" loading="lazy" decoding="async"></figure>
+  </div>
+  <p class="sub"><span lang="es">Más fotos</span><span lang="en">More photos</span></p>
+  <div class="more">
+    <figure><img src="img/m-crate.webp" width="900" height="1349" alt="Lia sentada sobre un cajón de madera con botas altas" data-alt-en="Lia sitting on a wooden crate in tall boots" loading="lazy" decoding="async"></figure>
+    <figure><img src="img/m-coat.webp" width="900" height="1351" alt="Lia con un abrigo naranja y azul con correas blancas" data-alt-en="Lia in an orange and blue coat with white straps" loading="lazy" decoding="async"></figure>
+    <figure class="m-wide"><img src="img/m-wine.webp" width="900" height="1350" alt="Lia con blusa vino tinto y la mano en la mejilla, retrato sobre fondo negro" data-alt-en="Lia in a wine-colored top with her hand on her cheek, portrait on a black background" loading="lazy" decoding="async"></figure>
+    <figure class="land"><img src="img/m-group.webp" width="1400" height="933" alt="Sesión de fotos grupal con temática de oficina" data-alt-en="Office-themed group photo shoot" loading="lazy" decoding="async"></figure>
+    <figure class="land"><img src="img/m-duo.webp" width="1400" height="933" alt="Lia hablando por teléfono en una sesión de fotos con temática de oficina" data-alt-en="Lia on the phone in an office-themed photo shoot" loading="lazy" decoding="async"></figure>
+  </div>
+</section>
+
+<section id="hago">
+  <h2><span lang="es">¿Qué puedo hacer por tu marca?</span><span lang="en">What can I do for your brand?</span></h2>
+  <p class="hint"><span lang="es">Toca una carpeta para abrirla.</span><span lang="en">Tap a folder to open it.</span></p>
+  <div class="folders" id="folders">
+    <article class="fold on" style="--c:#f4c9d5;--top:64px">
+      <button class="tab" type="button" aria-expanded="true" aria-controls="sv0"><span class="sticker"><span lang="es">Videos promocionales</span><span lang="en">Promo videos</span></span></button>
+      <div class="pic" id="sv0" role="region" aria-label="Videos promocionales" data-label-en="Promo videos"><img src="img/v-food.webp" width="417" height="650" alt="Lia comiendo en un restaurante" data-alt-en="Lia eating at a restaurant" loading="lazy" decoding="async"><div class="txt"><h3><span lang="es">Videos promocionales</span><span lang="en">Promo videos</span></h3><p><span lang="es">Contenido dinámico para destacar tus productos.</span><span lang="en">Dynamic content that makes your products stand out.</span></p></div></div>
+    </article>
+    <article class="fold" style="--c:#efb6c8;--top:112px">
+      <button class="tab" type="button" aria-expanded="false" aria-controls="sv1"><span class="sticker"><span lang="es">Estilismo</span><span lang="en">Styling</span></span></button>
+      <div class="pic" id="sv1" role="region" aria-label="Estilismo" data-label-en="Styling"><img src="img/v-shirt.webp" width="560" height="1017" alt="Lia mostrando una camisa" data-alt-en="Lia showing a shirt" loading="lazy" decoding="async"><div class="txt"><h3><span lang="es">Estilismo</span><span lang="en">Styling</span></h3><p><span lang="es">Maneras de usar creativamente moda y accesorios.</span><span lang="en">Creative ways to wear fashion and accessories.</span></p></div></div>
+    </article>
+    <article class="fold" style="--c:#f8d9e1;--top:40px">
+      <button class="tab" type="button" aria-expanded="false" aria-controls="sv2"><span class="sticker"><span lang="es">Contenido gastronómico</span><span lang="en">Food content</span></span></button>
+      <div class="pic" id="sv2" role="region" aria-label="Contenido gastronómico" data-label-en="Food content"><img src="img/v-plate.webp" width="640" height="960" alt="Plato de salmón con flores comestibles" data-alt-en="Salmon dish with edible flowers" loading="lazy" decoding="async"><div class="txt"><h3><span lang="es">Contenido gastronómico</span><span lang="en">Food content</span></h3><p><span lang="es">Grabo los platos de tu restaurante para que den ganas de ir a probarlos.</span><span lang="en">I film your restaurant’s dishes so people want to come and try them.</span></p></div></div>
+    </article>
+    <article class="fold" style="--c:#eaa9bf;--top:96px">
+      <button class="tab" type="button" aria-expanded="false" aria-controls="sv3"><span class="sticker"><span lang="es">Unboxings y reseñas</span><span lang="en">Unboxings &amp; reviews</span></span></button>
+      <div class="pic" id="sv3" role="region" aria-label="Unboxings y reseñas" data-label-en="Unboxings &amp; reviews"><img src="img/v-bunny.webp" width="560" height="1017" alt="Lia sonriendo con un peluche de conejo" data-alt-en="Lia smiling with a bunny plush" loading="lazy" decoding="async"><div class="txt"><h3><span lang="es">Unboxings y reseñas</span><span lang="en">Unboxings &amp; reviews</span></h3><p><span lang="es">Reseñas auténticas que conectan con tu audiencia.</span><span lang="en">Authentic reviews that connect with your audience.</span></p></div></div>
+    </article>
+    <article class="fold" style="--c:#f4c9d5;--top:56px">
+      <button class="tab" type="button" aria-expanded="false" aria-controls="sv4"><span class="sticker"><span lang="es">Tutoriales</span><span lang="en">Tutorials</span></span></button>
+      <div class="pic" id="sv4" role="region" aria-label="Tutoriales" data-label-en="Tutorials"><img src="img/f-profile.webp" width="820" height="1022" alt="Lia de perfil con la piel luminosa" data-alt-en="Lia in profile with glowing skin" loading="lazy" decoding="async"><div class="txt"><h3><span lang="es">Tutoriales</span><span lang="en">Tutorials</span></h3><p><span lang="es">Ideal para productos de belleza y tecnología.</span><span lang="en">Ideal for beauty and tech products.</span></p></div></div>
+    </article>
+    <article class="fold" style="--c:#efb6c8;--top:120px">
+      <button class="tab" type="button" aria-expanded="false" aria-controls="sv5"><span class="sticker"><span lang="es">Videos POV</span><span lang="en">POV videos</span></span></button>
+      <div class="pic" id="sv5" role="region" aria-label="Videos POV" data-label-en="POV videos"><img src="img/f-club.webp" width="760" height="1351" alt="Lia mirando a cámara desde unas escaleras" data-alt-en="Lia looking at the camera from a staircase" loading="lazy" decoding="async"><div class="txt"><h3><span lang="es">Videos POV</span><span lang="en">POV videos</span></h3><p><span lang="es">Tu producto visto como lo ve quien lo usa, con gafas Meta.</span><span lang="en">Your product seen through the eyes of the person using it, with Meta glasses.</span></p></div></div>
+    </article>
+    <article class="fold" style="--c:#f8d9e1;--top:72px">
+      <button class="tab" type="button" aria-expanded="false" aria-controls="sv6"><span class="sticker"><span lang="es">Modelaje y foto de producto</span><span lang="en">Modeling &amp; product photos</span></span></button>
+      <div class="pic" id="sv6" role="region" aria-label="Modelaje y foto de producto" data-label-en="Modeling &amp; product photos"><img src="img/m-crate.webp" width="900" height="1349" alt="Lia sentada sobre un cajón con botas" data-alt-en="Lia sitting on a crate in boots" loading="lazy" decoding="async"><div class="txt"><h3><span lang="es">Modelaje y foto de producto</span><span lang="en">Modeling &amp; product photos</span></h3><p><span lang="es">Fotos y videos modelando para mostrar tu producto.</span><span lang="en">Photos and videos of me modeling to showcase your product.</span></p></div></div>
+    </article>
+  </div>
+</section>
+
+<section id="set">
+  <canvas class="wv" data-wave="set" aria-hidden="true"></canvas>
+  <div class="sgrid">
+  <div class="stxt">
+  <h2><span lang="es">Mi equipo</span><span lang="en">My gear</span></h2>
+  <div class="set"><span><span lang="es">Sony ZV-E10, cámara profesional</span><span lang="en">Sony ZV-E10, professional camera</span></span><span><span lang="es">Gafas Meta para POV</span><span lang="en">Meta glasses for POV</span></span><span><span lang="es">Micrófono</span><span lang="en">Microphone</span></span></div>
+
+  <p class="sub" id="herramientas"><span lang="es">Herramientas que manejo</span><span lang="en">Tools I use</span></p>
+  <p class="lead" lang="es">Ayudo a las marcas a darles vida a sus ideas con diseño, animación y video. Combino herramientas de IA con edición hecha por mí en Photoshop, Illustrator y DaVinci Resolve, y le pongo un toque personal a cada proyecto. Desde la primera idea hasta los últimos detalles, creo contenido que se siente auténtico para cada marca y conecta con su audiencia.</p>
+  <p class="lead" lang="en">I help brands bring their ideas to life through design, animation, and video. I combine AI tools with hands-on editing in Photoshop, Illustrator, and DaVinci Resolve, adding a personal touch to every project. From the first idea to the final details, I create content that feels authentic to each brand and connects with its audience.</p>
+  <div class="set tools"><span>CapCut</span><span>InShot</span><span><span lang="es">Edits de Instagram</span><span lang="en">Instagram Edits</span></span><span>Canva</span><span>Notion</span><span>Photoshop</span><span>Illustrator</span><span>DaVinci Resolve</span><span><span lang="es">Herramientas de IA</span><span lang="en">AI tools</span></span></div>
+  </div>
+  <figure class="cut fade-r"><img src="img/c-paisley.webp" width="750" height="1300" alt="Lia con top strapless de paisley, short negro y bolso de cuero" data-alt-en="Lia in a paisley strapless top, black shorts and a leather bag" loading="lazy" decoding="async"></figure>
+  </div>
+</section>
+
+<section id="trabajo">
+  <h2><span lang="es">¿Cómo trabajo?</span><span lang="en">How I work</span></h2>
+  <p class="lead" lang="es">Me encanta conocer una marca: su historia, su personalidad y las personas que hay detrás, y encontrar formas creativas de compartir eso con el mundo. Desde darles forma a las ideas hasta grabar y editar, estoy en cada paso. Mi meta es crear contenido que se sienta fiel a la marca, que conecte con la gente y le dé una razón para actuar.</p>
+  <p class="lead" lang="en">I love getting to know a brand, like its story, its personality, and the people behind it, and finding creative ways to share that with the world. From shaping ideas to filming and editing, I’m involved in every step. My goal is to create content that feels true to the brand, connects with people, and gives them a reason to take action.</p>
+  <p class="hint"><span lang="es">Toca cada paso para ver el detalle.</span><span lang="en">Tap each step to see the details.</span></p>
+  <ol class="steps" id="steps">
+    <li class="on"><button class="step" type="button" aria-expanded="true" aria-controls="st1"><span class="sn" aria-hidden="true">1</span><span class="stt"><span lang="es">Reunión inicial para entender tu marca y definir qué contenido haremos.</span><span lang="en">A first meeting to understand your brand and define the content we’ll create.</span></span><span class="si" aria-hidden="true"></span></button>
+      <div class="sd" id="st1"><div><p lang="es">Hablamos de tu marca, tu público y lo que quieres lograr. De ahí salen las ideas y el plan de contenido.</p><p lang="en">We talk about your brand, your audience and what you want to achieve. That’s where the ideas and the content plan come from.</p></div></div></li>
+    <li><button class="step" type="button" aria-expanded="false" aria-controls="st2"><span class="sn" aria-hidden="true">2</span><span class="stt"><span lang="es">Producción creativa y grabación del contenido.</span><span lang="en">Creative production and filming.</span></span><span class="si" aria-hidden="true"></span></button>
+      <div class="sd" id="st2"><div><p lang="es">Preparo el guion y el estilismo, y grabo con mi Sony ZV-E10 y micrófono. Si tu producto lo pide, también grabo en POV con gafas Meta.</p><p lang="en">I prepare the script and the styling, and film with my Sony ZV-E10 and microphone. If your product calls for it, I also film POV with Meta glasses.</p></div></div></li>
+    <li><button class="step" type="button" aria-expanded="false" aria-controls="st3"><span class="sn" aria-hidden="true">3</span><span class="stt"><span lang="es">Edición profesional del contenido.</span><span lang="en">Professional editing of the content.</span></span><span class="si" aria-hidden="true"></span></button>
+      <div class="sd" id="st3"><div><p lang="es">Edito en CapCut, DaVinci Resolve o Edits de Instagram, con el ritmo, la música y los textos que necesita cada red.</p><p lang="en">I edit in CapCut, DaVinci Resolve or Instagram Edits, with the pacing, music and text each platform needs.</p></div></div></li>
+    <li><button class="step" type="button" aria-expanded="false" aria-controls="st4"><span class="sn" aria-hidden="true">4</span><span class="stt"><span lang="es">Entrega final lista para tus plataformas.</span><span lang="en">Final delivery, ready for your platforms.</span></span><span class="si" aria-hidden="true"></span></button>
+      <div class="sd" id="st4"><div><p lang="es">Recibes el contenido en los formatos que necesitas, listo para publicar.</p><p lang="en">You get the content in the formats you need, ready to post.</p></div></div></li>
+  </ol>
+</section>
+
+<section class="contact" id="contacto">
+  <canvas class="wv" data-wave="contacto" aria-hidden="true"></canvas>
+  <h2 class="cword"><span lang="es">Contacto</span><span lang="en">Contact</span></h2>
+  <div class="cwrap">
+    <div class="ctext">
+      <p><span lang="es">¿Creamos algo juntos?</span><span lang="en">Shall we create something together?</span></p>
+      <div class="links">
+        <a class="btn main" href="mailto:liavsalamanca.ugc@gmail.com">liavsalamanca.ugc@gmail.com</a>
+        <a class="btn" href="https://www.instagram.com/liavsalamanca/" target="_blank" rel="noopener">Instagram</a>
+        <a class="btn" href="https://www.tiktok.com/@liavsalamanca" target="_blank" rel="noopener">TikTok</a>
+      </div>
+    </div>
+    <figure class="cut"><img src="img/c-smile.webp" width="831" height="1150" alt="Lia sonriendo con los ojos cerrados, body de encaje negro y falda de jean" data-alt-en="Lia smiling with her eyes closed, in a black lace bodysuit and denim skirt" loading="lazy" decoding="async"></figure>
+  </div>
+  <div class="cword ghost" aria-hidden="true"><span lang="es">Contacto</span><span lang="en">Contact</span></div>
+</section>
+<footer>Lia Salamanca · Bucaramanga, Colombia</footer>
+
+<script>
+(function(){
+var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+/* cinta (palabras en cada idioma) */
+var words={
+  es:['unboxings','reseñas','estilismo','lifestyle','tecnología','fit','deporte','gastronomía','POV','modelaje'],
+  en:['unboxings','reviews','styling','lifestyle','tech','fit','sports','food','POV','modeling']
+};
+function cinta(l){var w=words[l];var row=w.concat(w).map(function(x){return '<span>'+x+'</span>'}).join('');
+  document.getElementById('t1').innerHTML=row;document.getElementById('t2').innerHTML=row}
+
+/* idioma: español por defecto; inglés con el botón, con ?lang=en o con #en */
+var meta=document.querySelector('meta[name="description"]');
+var T={
+  es:{title:document.title,desc:meta.content},
+  en:{title:'Lia Salamanca · UGC content creator',desc:'Portfolio of Lia Salamanca: UGC content creator, social media manager and community manager.'}
+};
+var alts=[].slice.call(document.querySelectorAll('[data-alt-en]')),labels=[].slice.call(document.querySelectorAll('[data-label-en]'));
+alts.forEach(function(e){e.setAttribute('data-alt-es',e.alt)});
+labels.forEach(function(e){e.setAttribute('data-label-es',e.getAttribute('aria-label'))});
+function setLang(l){
+  document.documentElement.lang=l;document.title=T[l].title;meta.content=T[l].desc;
+  alts.forEach(function(e){e.alt=e.getAttribute('data-alt-'+l)});
+  labels.forEach(function(e){e.setAttribute('aria-label',e.getAttribute('data-label-'+l))});
+  cinta(l);
+  try{localStorage.setItem('lia-lang',l)}catch(e){}
+}
+var start='es';
+try{start=localStorage.getItem('lia-lang')||'es'}catch(e){}
+if(/[?&]lang=en/.test(location.search)||location.hash==='#en')start='en';
+if(/[?&]lang=es/.test(location.search)||location.hash==='#es')start='es';
+setLang(start==='en'?'en':'es');
+document.getElementById('lang').addEventListener('click',function(){setLang(document.documentElement.lang==='en'?'es':'en')});
+
+/* carpetas */
+var folds=[].slice.call(document.querySelectorAll('.fold'));
+folds.forEach(function(f){
+  f.querySelector('.tab').addEventListener('click',function(){
+    folds.forEach(function(o){var on=o===f;o.classList.toggle('on',on);o.querySelector('.tab').setAttribute('aria-expanded',on)});
+  });
+});
+
+/* ¿Cómo trabajo?: abrir/cerrar pasos y línea de progreso al bajar */
+var steps=document.getElementById('steps'),sli=[].slice.call(steps.children);
+sli.forEach(function(li){
+  li.querySelector('.step').addEventListener('click',function(){
+    var open=!li.classList.contains('on');
+    li.classList.toggle('on',open);this.setAttribute('aria-expanded',open);
+  });
+});
+var sTick=false;
+function sProg(){sTick=false;var r=steps.getBoundingClientRect(),vh=innerHeight;
+  var p=Math.min(1,Math.max(0,(vh*.75-r.top)/r.height));steps.style.setProperty('--p',p.toFixed(3))}
+addEventListener('scroll',function(){if(!sTick){sTick=true;requestAnimationFrame(sProg)}},{passive:true});
+sProg();
+
+/* líneas en canvas: pocas, un solo trazo, 30 fps, pausa fuera de pantalla */
+var hero=document.querySelector('.hero'),cv=document.getElementById('w'),ctx=cv.getContext('2d');
+var W=0,H=0,mx=.5,tmx=.5,vis=true,last=0,L=20,STEP=34;
+function size(){var d=Math.min(devicePixelRatio||1,1.5);W=cv.clientWidth;H=cv.clientHeight;cv.width=Math.round(W*d);cv.height=Math.round(H*d);ctx.setTransform(d,0,0,d,0,0);ctx.strokeStyle='rgba(236,226,206,.13)';ctx.lineWidth=1;draw(performance.now())}
+function draw(t){
+  ctx.clearRect(0,0,W,H);
+  var y0=H*.46,sp=(H*.5)/L,a=H*.035,ph=t*.00026+mx*2.4;
+  ctx.beginPath();
+  for(var i=0;i<L;i++){
+    for(var x=0;x<=W+STEP;x+=STEP){
+      var y=y0+i*sp+Math.sin(x*.0042+i*.22+ph)*a+Math.sin(x*.011-t*.00018+i*.1)*a*.3;
+      x?ctx.lineTo(x,y):ctx.moveTo(x,y);
+    }
+  }
+  ctx.stroke();
+}
+function frame(t){
+  if(vis&&!document.hidden&&t-last>33){last=t;mx+=(tmx-mx)*.08;draw(t)}
+  requestAnimationFrame(frame);
+}
+size();addEventListener('resize',size);
+new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(hero);
+if(!rm)requestAnimationFrame(frame);
+
+/* las mismas ondas en Fotos, Modelaje y Contacto; cada una se pausa fuera de pantalla */
+var WAVES={
+  fotos:{n:14,from:.04,size:.92,amp:46,vertical:false},     /* líneas rosadas que cruzan la galería */
+  modelaje:{n:18,from:.42,size:.56,amp:26,vertical:true},   /* cortina vertical detrás de la foto */
+  contacto:{n:18,from:.3,size:.62,amp:30,vertical:false},   /* como en el hero */
+  set:{n:16,from:.58,size:.4,amp:24,vertical:true,m:{from:.1,size:.8}}  /* cortina detrás de la foto */
+};
+[].forEach.call(document.querySelectorAll('canvas.wv'),function(c){
+  var o=WAVES[c.getAttribute('data-wave')],x=c.getContext('2d'),w=0,h=0,col='',on=false,lt=0,ST=34;
+  if(!o)return;
+  function sz(){var d=Math.min(devicePixelRatio||1,1.5);w=c.clientWidth;h=c.clientHeight;if(!w||!h)return;
+    c.width=Math.round(w*d);c.height=Math.round(h*d);x.setTransform(d,0,0,d,0,0);col=getComputedStyle(c).color;dw(performance.now())}
+  function dw(t){
+    x.clearRect(0,0,w,h);x.strokeStyle=col;x.lineWidth=1;x.beginPath();
+    var f=(o.m&&w<900)?o.m.from:o.from,s=(o.m&&w<900)?o.m.size:o.size;
+    var len=o.vertical?h:w,span=o.vertical?w:h,base=span*f,sp=span*s/o.n,ph=t*.00026;
+    for(var i=0;i<o.n;i++){
+      for(var p=0;p<=len+ST;p+=ST){
+        var q=base+i*sp+Math.sin(p*.0042+i*.22+ph)*o.amp+Math.sin(p*.011-t*.00018+i*.1)*o.amp*.3;
+        if(o.vertical){p?x.lineTo(q,p):x.moveTo(q,p)}else{p?x.lineTo(p,q):x.moveTo(p,q)}
+      }
+    }
+    x.stroke();
+  }
+  function fr(t){if(!on)return;if(!document.hidden&&t-lt>33){lt=t;dw(t)}requestAnimationFrame(fr)}
+  new IntersectionObserver(function(e){var was=on;on=e[0].isIntersecting;if(on&&!was&&!rm)requestAnimationFrame(fr)}).observe(c);
+  sz();addEventListener('resize',sz);
+  try{matchMedia('(prefers-color-scheme:dark)').addEventListener('change',sz)}catch(e){}
+});
+
+/* el retrato y el nombre se mueven apenas con el puntero */
+if(!rm&&matchMedia('(pointer:fine)').matches){
+  var px=0,py=0,tx=0,ty=0,run=false;
+  function step(){px+=(tx-px)*.1;py+=(ty-py)*.1;hero.style.setProperty('--mx',px.toFixed(3));hero.style.setProperty('--my',py.toFixed(3));
+    if(Math.abs(tx-px)>.002||Math.abs(ty-py)>.002)requestAnimationFrame(step);else run=false}
+  hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();tx=(e.clientX-r.left)/r.width*2-1;ty=(e.clientY-r.top)/r.height*2-1;tmx=(tx+1)/2;if(!run){run=true;requestAnimationFrame(step)}});
+
+  /* chispas: puntitos diminutos y casi transparentes */
+  var lastSp=0,cols=['#f2b6c9','#f7d9e1','#ece2ce'];
+  addEventListener('pointermove',function(e){
+    var n=performance.now();if(n-lastSp<70)return;lastSp=n;
+    var s=document.createElement('span'),z=2+Math.random()*3;
+    s.className='sp';s.style.width=s.style.height=z+'px';
+    s.style.left=(e.clientX-z/2)+'px';s.style.top=(e.clientY-z/2)+'px';
+    s.style.setProperty('--sc',cols[Math.floor(Math.random()*cols.length)]);
+    s.style.setProperty('--dx',(Math.random()*24-12)+'px');s.style.setProperty('--dy',(Math.random()*24+4)+'px');
+    document.body.appendChild(s);s.addEventListener('animationend',function(){s.remove()});
+  });
+}
+})();
+</script>
+</body>
+</html>
