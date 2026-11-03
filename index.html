@@ -259,6 +259,61 @@ footer{text-align:center;color:var(--soft);font-size:.9rem;padding:2rem 1rem 3re
  .contact .cword{font-size:min(17vw,17rem)}
 }
 
+/* ---------- ¿QUÉ ESTÁS BUSCANDO? ---------- */
+.paths{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(.8rem,2vw,1.4rem);max-width:1200px;margin-top:1.6rem}
+@media(min-width:860px){.paths{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.pcard{all:unset;box-sizing:border-box;display:flex;flex-direction:column;gap:.35rem;cursor:pointer;min-width:0;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.pcard:hover{transform:translateY(-6px)}
+.pcard:focus-visible{outline:2px solid var(--pink);outline-offset:4px;border-radius:12px}
+.pimg{display:block;aspect-ratio:3/4;border-radius:999px 999px 8px 8px;overflow:hidden;background:var(--pink);box-shadow:0 0 0 0 var(--pink);transition:box-shadow .3s}
+.pimg img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;display:block;transition:transform .6s cubic-bezier(.2,.8,.2,1),filter .4s}
+.pcard:hover .pimg img{transform:scale(1.06)}
+.pcard.on .pimg{box-shadow:0 0 0 4px var(--pink)}
+body[data-path]:not([data-path="todo"]) .pcard:not(.on) .pimg img{filter:grayscale(.7) opacity(.75)}
+.pt{font:400 clamp(1.3rem,2.4vw,1.8rem)/1.1 Italiana,"Didot",Georgia,serif;margin-top:.6rem;text-wrap:balance}
+.ps{font-size:.9rem;color:var(--soft)}
+
+/* orden de las secciones según el camino elegido */
+#flow{display:flex;flex-direction:column}
+#flow>*{order:20}
+#flow>section{border-top:1px solid var(--line)}
+#contacto{order:99}
+.morebar{order:50;display:none;text-align:center;padding:clamp(3rem,7vw,5rem) clamp(1.2rem,5vw,4rem);border-top:1px solid var(--line)}
+.morebar p{font:400 clamp(1.5rem,3.4vw,2.4rem)/1.15 Italiana,"Didot",Georgia,serif;margin:0 0 1.2rem}
+body[data-path]:not([data-path="todo"]):not(.showall) .morebar{display:block}
+body[data-path="ugc"] #videos{order:1}body[data-path="ugc"] #hago{order:2}body[data-path="ugc"] #trabajo{order:3}body[data-path="ugc"] #set{order:4}
+body[data-path="ugc"] :is(#quien,#fotos,#modelaje,#social){order:60}
+body[data-path="ugc"]:not(.showall) :is(#quien,#fotos,#modelaje,#social){display:none}
+body[data-path="modelo"] #modelaje{order:1}body[data-path="modelo"] #fotos{order:2}body[data-path="modelo"] #quien{order:3}
+body[data-path="modelo"] :is(#videos,#hago,#social,#set,#trabajo){order:60}
+body[data-path="modelo"]:not(.showall) :is(#videos,#hago,#social,#set,#trabajo){display:none}
+body[data-path="social"] #social{order:1}body[data-path="social"] #videos{order:2}body[data-path="social"] #set{order:3}body[data-path="social"] #trabajo{order:4}
+body[data-path="social"] :is(#quien,#fotos,#modelaje,#hago){order:60}
+body[data-path="social"]:not(.showall) :is(#quien,#fotos,#modelaje,#hago){display:none}
+
+/* frase final según el camino */
+.pv{display:none}
+body:not([data-path]) .pv[data-pv="todo"],body[data-path="todo"] .pv[data-pv="todo"],body[data-path="ugc"] .pv[data-pv="ugc"],body[data-path="modelo"] .pv[data-pv="modelo"],body[data-path="social"] .pv[data-pv="social"]{display:inline}
+
+/* sección social media */
+.sgrid2{display:grid;gap:2.5rem;align-items:center}
+.sgrid2>*{min-width:0}
+.sgrid2 .warch{margin:0;justify-self:center;width:100%;max-width:340px;aspect-ratio:3/4;border-radius:999px 999px 6px 6px;overflow:hidden}
+.sgrid2 .warch img{width:100%;height:100%;object-fit:cover;display:block}
+@media(min-width:860px){.sgrid2{grid-template-columns:7fr 5fr;gap:5rem}}
+.dos{list-style:none;padding:0;margin:0 0 1.6rem;display:grid;grid-template-columns:minmax(0,1fr);gap:.8rem;max-width:44rem}
+@media(min-width:560px){.dos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.dos li{border:1px solid var(--ink);border-radius:18px;padding:1rem 1.2rem;display:flex;flex-direction:column;gap:.2rem;transition:background .25s,transform .3s}
+.dos li:hover{background:color-mix(in srgb,var(--pink) 45%,transparent);transform:translateY(-3px)}
+.dos b{font:400 1.5rem/1.1 Italiana,"Didot",Georgia,serif}
+.exp{display:inline-block;margin:0;padding:.5rem 1.1rem;border-radius:99px;background:var(--pink);color:#000;font-weight:500}
+
+/* botón flotante del camino elegido */
+.pathchip{all:unset;box-sizing:border-box;position:fixed;z-index:40;left:max(1rem,env(safe-area-inset-left,0px));bottom:calc(1rem + env(safe-area-inset-bottom,0px));display:flex;gap:.7rem;align-items:center;padding:.6rem 1.1rem;border-radius:99px;background:rgba(0,0,0,.82);color:#ece2ce;border:1px solid rgba(236,226,206,.35);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);font:500 .85rem/1.2 "DM Sans",sans-serif;cursor:pointer;max-width:calc(100vw - 2rem)}
+.pathchip[hidden]{display:none}
+.pathchip u{color:var(--pink);text-underline-offset:3px}
+.pathchip:focus-visible{outline:2px solid var(--pink);outline-offset:3px}
+
 /* ---------- IDIOMA ES / EN ---------- */
 html:not([lang="en"]) body [lang="en"],html[lang="en"] body [lang="es"]{display:none!important}
 .lang{all:unset;box-sizing:border-box;position:fixed;z-index:40;top:1rem;right:clamp(1.2rem,5vw,4rem);display:flex;gap:2px;padding:3px;border-radius:99px;background:rgba(0,0,0,.78);border:1px solid rgba(236,226,206,.4);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);cursor:pointer;font:500 .82rem/1 "DM Sans",sans-serif;letter-spacing:.06em}
@@ -300,6 +355,20 @@ html:not([lang="en"]) .lang [data-v="es"],html[lang="en"] .lang [data-v="en"]{ba
 </header>
 
 <div class="mq"><div class="tr" id="t1"></div><div class="tr" id="t2" aria-hidden="true"></div></div>
+
+<!-- ¿Qué estás buscando? Cada tarjeta reorganiza la página. Links directos: #ugc, #modelo, #social, #todo -->
+<section id="busco">
+  <h2><span lang="es">¿Qué estás buscando?</span><span lang="en">What are you looking for?</span></h2>
+  <p class="hint"><span lang="es">Elige una opción y te muestro primero lo que te interesa.</span><span lang="en">Pick one and I’ll show you what matters to you first.</span></p>
+  <div class="paths">
+    <button class="pcard" type="button" data-go="ugc" aria-pressed="false"><span class="pimg"><img src="img/v-bunny.webp" width="560" height="1017" alt="" loading="lazy" decoding="async"></span><span class="pt"><span lang="es">Contenido UGC para mi marca</span><span lang="en">UGC content for my brand</span></span><span class="ps"><span lang="es">Videos, reseñas y unboxings</span><span lang="en">Videos, reviews &amp; unboxings</span></span></button>
+    <button class="pcard" type="button" data-go="modelo" aria-pressed="false"><span class="pimg"><img src="img/m-wine.webp" width="900" height="1350" alt="" loading="lazy" decoding="async"></span><span class="pt"><span lang="es">Una modelo</span><span lang="en">A model</span></span><span class="ps"><span lang="es">Book, sesiones y foto de producto</span><span lang="en">Portfolio, shoots &amp; product photos</span></span></button>
+    <button class="pcard" type="button" data-go="social" aria-pressed="false"><span class="pimg"><img src="img/v-food.webp" width="417" height="650" alt="" loading="lazy" decoding="async"></span><span class="pt"><span lang="es">Social media / community manager</span><span lang="en">Social media / community manager</span></span><span class="ps"><span lang="es">Contenido, publicaciones y comunidad</span><span lang="en">Content, posting &amp; community</span></span></button>
+    <button class="pcard" type="button" data-go="todo" aria-pressed="false"><span class="pimg"><img src="img/f-pink.webp" width="1000" height="922" alt="" loading="lazy" decoding="async"></span><span class="pt"><span lang="es">Solo quiero conocerte</span><span lang="en">I just want to get to know you</span></span><span class="ps"><span lang="es">Todo mi portafolio</span><span lang="en">My full portfolio</span></span></button>
+  </div>
+</section>
+
+<main id="flow">
 
 <section class="who" id="quien">
   <h2><span lang="es">¿Quién soy?</span><span lang="en">About me</span></h2>
@@ -419,6 +488,24 @@ html:not([lang="en"]) .lang [data-v="es"],html[lang="en"] .lang [data-v="en"]{ba
   </div>
 </section>
 
+<section id="social">
+  <div class="sgrid2">
+    <div class="stxt">
+      <h2><span lang="es">Social media y comunidad</span><span lang="en">Social media &amp; community</span></h2>
+      <p class="lead" lang="es">Me encargo de que tus redes se vean bonitas y se sientan vivas. Lo mío es crear el contenido: grabo los videos, tomo las fotos, las publico en el feed y en historias, y respondo los comentarios y mensajes de tu comunidad con cercanía.</p>
+      <p class="lead" lang="en">I make sure your social media looks beautiful and feels alive. Creating the content is my thing: I film the videos, take the photos, post them to your feed and stories, and reply to your community’s comments and messages with a warm, personal touch.</p>
+      <ul class="dos">
+        <li><b><span lang="es">Grabo y fotografío</span><span lang="en">I film &amp; shoot</span></b><span lang="es">Videos y fotos de tu marca, tus productos o tu restaurante, con mi Sony ZV-E10.</span><span lang="en">Videos and photos of your brand, products or restaurant, with my Sony ZV-E10.</span></li>
+        <li><b><span lang="es">Edito</span><span lang="en">I edit</span></b><span lang="es">En CapCut, Edits de Instagram y Canva, listo para cada formato.</span><span lang="en">In CapCut, Instagram Edits and Canva, ready for every format.</span></li>
+        <li><b><span lang="es">Publico</span><span lang="en">I post</span></b><span lang="es">Posts, reels e historias con una estética cuidada.</span><span lang="en">Posts, reels and stories with a polished look.</span></li>
+        <li><b><span lang="es">Respondo</span><span lang="en">I reply</span></b><span lang="es">Comentarios y mensajes con calidez, como lo haría tu marca.</span><span lang="en">Comments and messages answered warmly, the way your brand would.</span></li>
+      </ul>
+      <p class="exp"><span lang="es">Actualmente manejo el Instagram del restaurante Taikinsa, del hotel Dann Carlton Bucaramanga.</span><span lang="en">I currently run the Instagram for Taikinsa restaurant, at the Dann Carlton Bucaramanga hotel.</span></p>
+    </div>
+    <figure class="warch"><img src="img/f-terraza.webp" width="900" height="1200" alt="Lia en la terraza de un restaurante con una bebida roja" data-alt-en="Lia on a restaurant terrace with a red drink" loading="lazy" decoding="async"></figure>
+  </div>
+</section>
+
 <section id="set">
   <canvas class="wv" data-wave="set" aria-hidden="true"></canvas>
   <div class="sgrid">
@@ -452,12 +539,17 @@ html:not([lang="en"]) .lang [data-v="es"],html[lang="en"] .lang [data-v="en"]{ba
   </ol>
 </section>
 
+<div id="morebar" class="morebar">
+  <p><span lang="es">Esto es lo principal para ti. ¿Quieres ver el resto?</span><span lang="en">That’s the essentials for you. Want to see the rest?</span></p>
+  <button type="button" class="btn" id="showall"><span lang="es">Ver todo mi portafolio</span><span lang="en">See my full portfolio</span></button>
+</div>
+
 <section class="contact" id="contacto">
   <canvas class="wv" data-wave="contacto" aria-hidden="true"></canvas>
   <h2 class="cword"><span lang="es">Contacto</span><span lang="en">Contact</span></h2>
   <div class="cwrap">
     <div class="ctext">
-      <p><span lang="es">¿Creamos algo juntos?</span><span lang="en">Shall we create something together?</span></p>
+      <p><span class="pv" data-pv="todo"><span lang="es">¿Creamos algo juntos?</span><span lang="en">Shall we create something together?</span></span><span class="pv" data-pv="ugc"><span lang="es">¿Creamos el video de tu marca?</span><span lang="en">Shall we make your brand’s video?</span></span><span class="pv" data-pv="modelo"><span lang="es">¿Hacemos una sesión juntos?</span><span lang="en">Shall we do a shoot together?</span></span><span class="pv" data-pv="social"><span lang="es">¿Le damos vida a tus redes?</span><span lang="en">Shall we bring your social media to life?</span></span></p>
       <div class="links">
         <a class="btn main" href="mailto:liavsalamanca.ugc@gmail.com">liavsalamanca.ugc@gmail.com</a>
         <a class="btn" href="https://www.instagram.com/liavsalamanca/" target="_blank" rel="noopener">Instagram</a>
@@ -468,6 +560,10 @@ html:not([lang="en"]) .lang [data-v="es"],html[lang="en"] .lang [data-v="en"]{ba
   </div>
   <div class="cword ghost" aria-hidden="true"><span lang="es">Contacto</span><span lang="en">Contact</span></div>
 </section>
+</main>
+
+<!-- aparece cuando la persona eligió un camino -->
+<button class="pathchip" id="pathchip" type="button" hidden><span id="pathname"></span><u><span lang="es">Cambiar</span><span lang="en">Change</span></u></button>
 <footer>Lia Salamanca · Bucaramanga, Colombia</footer>
 
 <script>
@@ -527,6 +623,41 @@ function sProg(){sTick=false;var r=steps.getBoundingClientRect(),vh=innerHeight;
 addEventListener('scroll',function(){if(!sTick){sTick=true;requestAnimationFrame(sProg)}},{passive:true});
 sProg();
 
+/* ¿Qué estás buscando?: cada camino reorganiza la página y tiene su link (#ugc, #modelo, #social, #todo) */
+var PATHS={
+  ugc:{es:'Contenido UGC',en:'UGC content',mail:'Contenido UGC'},
+  modelo:{es:'Modelaje',en:'Modeling',mail:'Modelaje'},
+  social:{es:'Social media',en:'Social media',mail:'Social media'},
+  todo:{es:'Todo mi portafolio',en:'Full portfolio',mail:''}
+};
+var B=document.body,cards=[].slice.call(document.querySelectorAll('.pcard')),chip=document.getElementById('pathchip'),
+    flow=document.getElementById('flow'),mailBtn=document.querySelector('.contact .btn.main');
+function setPath(p,go){
+  if(!PATHS[p])return;
+  B.setAttribute('data-path',p);B.classList.remove('showall');
+  cards.forEach(function(c){var on=c.getAttribute('data-go')===p;c.classList.toggle('on',on);c.setAttribute('aria-pressed',on)});
+  document.getElementById('pathname').innerHTML='<span lang="es">Viendo: '+PATHS[p].es+'</span><span lang="en">Viewing: '+PATHS[p].en+'</span>';
+  chip.hidden=(p==='todo');
+  mailBtn.href='mailto:liavsalamanca.ugc@gmail.com'+(PATHS[p].mail?'?subject='+encodeURIComponent(PATHS[p].mail):'');
+  if(go)setTimeout(function(){flow.scrollIntoView({behavior:rm?'auto':'smooth'})},30);
+}
+cards.forEach(function(c){c.addEventListener('click',function(){
+  var p=c.getAttribute('data-go');
+  try{history.replaceState(null,'','#'+p)}catch(e){}
+  setPath(p,true);
+})});
+chip.addEventListener('click',function(){document.getElementById('busco').scrollIntoView({behavior:rm?'auto':'smooth'})});
+document.getElementById('showall').addEventListener('click',function(){B.classList.add('showall');this.blur()});
+/* si alguien toca un link del menú hacia una sección oculta, se muestra todo */
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a)return;
+  var t=document.getElementById(a.getAttribute('href').slice(1));
+  if(t&&getComputedStyle(t).display==='none')B.classList.add('showall');
+});
+function fromHash(go){var h=location.hash.slice(1);if(PATHS[h])setPath(h,go)}
+fromHash(true);
+addEventListener('hashchange',function(){fromHash(true)});
+
 /* líneas en canvas: pocas, un solo trazo, 30 fps, pausa fuera de pantalla */
 var hero=document.querySelector('.hero'),cv=document.getElementById('w'),ctx=cv.getContext('2d');
 var W=0,H=0,mx=.5,tmx=.5,vis=true,last=0,L=20,STEP=34;
@@ -576,7 +707,9 @@ var WAVES={
     x.stroke();
   }
   function fr(t){if(!on)return;if(!document.hidden&&t-lt>33){lt=t;dw(t)}requestAnimationFrame(fr)}
-  new IntersectionObserver(function(e){var was=on;on=e[0].isIntersecting;if(on&&!was&&!rm)requestAnimationFrame(fr)}).observe(c);
+  new IntersectionObserver(function(e){var was=on;on=e[0].isIntersecting;
+    if(on&&(c.clientWidth!==w||c.clientHeight!==h))sz(); /* la sección pudo estar oculta */
+    if(on&&!was&&!rm)requestAnimationFrame(fr)}).observe(c);
   sz();addEventListener('resize',sz);
   try{matchMedia('(prefers-color-scheme:dark)').addEventListener('change',sz)}catch(e){}
 });
